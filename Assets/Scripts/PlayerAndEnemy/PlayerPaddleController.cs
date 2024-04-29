@@ -6,10 +6,25 @@ public class PlayerPaddleController : MonoBehaviour
 {
     public float speed = 5f;
 
+    public string moveAxisName = "Vertical";
+
+    public bool isPlayer = true;
+    public SpriteRenderer spriteRenderer;
+
+    private void Start()
+    {
+        if (isPlayer)
+        
+            spriteRenderer.color = SaveController.Instance.colorPlayer;
+            else
+            spriteRenderer.color = SaveController.Instance.colorEnemy;
+        
+    }
+
     private void Update()
     {
         //Capturar o movimento vertical do player
-        float moveInput = Input.GetAxis("Vertical");
+        float moveInput = Input.GetAxis(moveAxisName);
 
         Vector3 newPosition = transform.position + Vector3.up * moveInput * speed * Time.deltaTime;
 
