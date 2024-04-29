@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveController : MonoBehaviour
 {
@@ -64,5 +65,11 @@ public class SaveController : MonoBehaviour
     public string GetLastWinner()
     {
         return PlayerPrefs.GetString(saveWinnerKey);
+    }
+
+    public void ClearSave()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
