@@ -9,6 +9,9 @@ public class SaveController : MonoBehaviour
     public Color colorPlayer = Color.white;
     public Color colorEnemy = Color.white;
 
+    public string namePlayer;
+    public string nameEnemy;
+
     public static SaveController _instance;
 
     public static SaveController Instance
@@ -36,5 +39,10 @@ public class SaveController : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    public string GetName(bool isPlayer)
+    {
+        return isPlayer ? namePlayer : nameEnemy;
     }
 }

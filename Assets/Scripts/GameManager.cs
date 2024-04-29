@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI textPointPlayer;
     public TextMeshProUGUI textPointEnemy;
+    public TextMeshProUGUI textEndGame;
 
     public BallController ballController;
 
@@ -67,7 +68,10 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         screenEndGame.SetActive(true);
+       textEndGame.text = "Vitória " + SaveController.Instance.GetName(scorePlayer > scoreEnemy);
+
         Invoke("LoadMenu", 2f);
+
     }
 
     private void LoadMenu()
