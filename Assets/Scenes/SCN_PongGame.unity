@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3c903816ea83c4479dd52a768ddc744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   moveAxisName: Vertical
   isPlayer: 1
   spriteRenderer: {fileID: 157871367}
@@ -2064,7 +2064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3c903816ea83c4479dd52a768ddc744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 1
   moveAxisName: Vertical2
   isPlayer: 0
   spriteRenderer: {fileID: 1719655785}

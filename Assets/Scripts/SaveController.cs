@@ -12,6 +12,8 @@ public class SaveController : MonoBehaviour
     public string namePlayer;
     public string nameEnemy;
 
+    public string saveWinnerKey = "SavedWinner";
+
     public static SaveController _instance;
 
     public static SaveController Instance
@@ -44,5 +46,23 @@ public class SaveController : MonoBehaviour
     public string GetName(bool isPlayer)
     {
         return isPlayer ? namePlayer : nameEnemy;
+    }
+
+    public void ResetGame()
+    {
+        nameEnemy = "";
+        namePlayer = "";
+        colorEnemy = Color.white;
+        colorPlayer = Color.white;
+    }
+
+    public void SaveWinner(string winner)
+    {
+        PlayerPrefs.SetString(saveWinnerKey, winner);
+    }
+
+    public string GetLastWinner()
+    {
+        return PlayerPrefs.GetString(saveWinnerKey);
     }
 }
